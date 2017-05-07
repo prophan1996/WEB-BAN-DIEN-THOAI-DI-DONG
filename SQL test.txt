@@ -1,0 +1,34 @@
+﻿CREATE TABLE IF NOT EXISTS `binhluan` (
+  `Mabinhluan` int(11) NOT NULL AUTO_INCREMENT,
+  `Mathanhvien` int(11) NOT NULL,
+  `Masanpham` int(11) NOT NULL,
+  `Noidung` varchar(255) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`Mabinhluan`),
+  KEY `Mathanhvien` (`Mathanhvien`),
+  KEY `Masanpham` (`Masanpham`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
+-----------------------------------------------------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `chitietdonhang` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `iddonhang` int(11) NOT NULL,
+  `idsanpham` int(11) NOT NULL,
+  `soluong` int(11) NOT NULL DEFAULT '1',
+  `gia` decimal(55,0) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `iddonhang` (`iddonhang`),
+  KEY `idsanpham` (`idsanpham`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=62 ;
+-----------------------------------------------------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `chitietphukien` (
+  `Mahang` int(11) NOT NULL AUTO_INCREMENT,
+  `Tenphukien` varchar(255) NOT NULL,
+  `Maphukien` varchar(50) NOT NULL,
+  `Mota` longtext NOT NULL,
+  `Baohanh` varchar(50) NOT NULL,
+  `Tinhtrang` varchar(50) NOT NULL,
+  `Trangthai` varchar(50) NOT NULL,
+  `Hinhanh` varchar(255) NOT NULL,
+  `Gia` varchar(100) NOT NULL,
+  PRIMARY KEY (`Mahang`),
+  KEY `Maphukien` (`Maphukien`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=45 ;
